@@ -14,8 +14,21 @@ git clone https://github.com/puravparab/Conspectus.git
 cd Conspectus
 ```
 
-### API
-#### Without Docker:
+### Using Docker Compose
+Run docker compose to run the application
+```
+docker compose up
+// or run in detached mode
+docker compose up -d
+```
+Stop running application
+```
+docker compose down
+```
+
+### Without Docker Compose
+#### API only
+(Without Docker):
 Run virtual environment using pipenv
 ```
 cd api
@@ -23,22 +36,19 @@ pip install --user pipenv
 pipenv shell
 pipenv sync
 ```
-
 Rename .env.template to .env and enter your credentials
-
 Run the following commands
 (You might have to restart the virtual environment to load the env variables)
 ```
 python manage.py collectstatic
 python manage.py migrate
 ```
-
 Run the server at http://127.0.0.1:8000 or http://localhost:8000
 ```
 python manage.py runserver 0.0.0.0:8000
 ```
 
-#### With Docker:
+(With Docker):
 Create Image
 ```
 cd api
