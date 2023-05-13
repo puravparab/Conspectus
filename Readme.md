@@ -37,6 +37,7 @@ pipenv shell
 pipenv sync
 ```
 Rename .env.template to .env and enter your credentials
+
 Run the following commands
 (You might have to restart the virtual environment to load the env variables)
 ```
@@ -49,6 +50,7 @@ python manage.py runserver 0.0.0.0:8000
 ```
 
 (With Docker):
+
 Create Image
 ```
 cd api

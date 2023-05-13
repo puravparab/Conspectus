@@ -8,6 +8,7 @@ django = "==4.2.1"
 python-dotenv = "*"
 whitenoise = "*"
 gunicorn = "*"
+djangorestframework = "*"
 
 [dev-packages]
 
