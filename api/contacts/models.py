@@ -1,4 +1,5 @@
 from django.db import models
+from organizations.models import Organization
 
 # Contact Model
 class Contact(models.Model):
@@ -7,7 +8,7 @@ class Contact(models.Model):
 	phone_number = models.CharField(max_length=20, null=True, blank=True)
 	email = models.EmailField(null=True, blank=True)
 	# Social media
-	# workplace
+	workplace = models.ForeignKey(Organization, on_delete=models.SET_NULL, null=True, blank=True)
 	current_location_city = models.CharField(max_length=255, null=True, blank=True)
 	current_location_country = models.CharField(max_length=255, null=True, blank=True)
 

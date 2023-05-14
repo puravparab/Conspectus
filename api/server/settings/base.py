@@ -48,9 +48,11 @@ INSTALLED_APPS = [
 
 	# django-rest-framework
 	'rest_framework',
-	
+
 	# Contacts
 	'contacts.apps.ContactsConfig',
+	# Organizations
+	'organizations.apps.OrganizationsConfig',
 ]
 
 MIDDLEWARE = [
