@@ -4,5 +4,5 @@ from .views import *
 app_name = 'organizations'
 
 urlpatterns = [
-	path('', organization, name='get-organizations')
+	path('', organization.as_view(), name='get-organizations')
 ]
