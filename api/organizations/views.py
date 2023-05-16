@@ -32,7 +32,7 @@ class organization(APIView):
 
 		if data == []:
 			return Response({
-				"message": "No organization's added"
+				"message": "No organizations added"
 			}, status=status.HTTP_400_BAD_REQUEST)
 
 		for org in data:
