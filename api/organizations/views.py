@@ -114,5 +114,5 @@ class organization(APIView):
 		except Exception as e:
 			return Response({
 				"error": str(e),
-				"message": "error organization updated failed "
+				"message": "error organization update failed "
 			}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -4,7 +4,7 @@ from .models import Organization
 @admin.register(Organization)
 class OrganizationAdmin(admin.ModelAdmin):
 	list_display = [
-		"name", "location_city", "location_country", "website",
+		"id", "name", "location_city", "location_country", "website",
 		"created_at", "last_modified"
 	]
 

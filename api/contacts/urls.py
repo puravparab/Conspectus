@@ -4,5 +4,6 @@ from .views import *
 app_name = 'contacts'
 
 urlpatterns = [
-	path('', contact.as_view(), name='get-contacts')
+	path('', contact.as_view(), name='contacts'),
+	path('<int:id>/', contactDetail.as_view(), name='contacts-detail')
 ]
