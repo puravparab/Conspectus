@@ -20,6 +20,7 @@ class organization(APIView):
 				"message": "No organization found"
 			}, status=status.HTTP_404_NOT_FOUND)
 
+		# get all orgs
 		serializer = OrganizationSerializer(organizations, many=True)
 		return Response({
 			"data": serializer.data,
@@ -35,6 +36,7 @@ class organization(APIView):
 				"message": "No organizations added"
 			}, status=status.HTTP_400_BAD_REQUEST)
 
+		# Iterate through all orgs and add them to the database
 		for org in data:
 			name = org["name"]
 			
@@ -50,6 +52,7 @@ class organization(APIView):
 			location_country = org["location_country"]
 			website = org["website"]
 
+			# Add org to database
 			try:
 				organization = Organization.objects.create(
 					name = name,
@@ -68,25 +71,41 @@ class organization(APIView):
 			"message": "successfully added organization"
 		}, status=status.HTTP_200_OK)
 
-	# Update Organization
-	def put(self, request):
-		name = request.data.get("name")
-		if name.strip() == "":
+
+class organizationDetail(APIView):
+	# Get specify org
+	def get(self, request, id, format=None):
+		organization = Organization.objects.filter(id=id)
+
+		# If no organization can be found
+		if not organization.exists():
 			return Response({
-				"message": "name empty"
-			}, status=status.HTTP_400_BAD_REQUEST)
+				"data": {},
+				"message": "No organization found"
+			}, status=status.HTTP_404_NOT_FOUND)
 
-		organization = Organization.objects.filter(name=name)
+		# get specified org
+		serializer = OrganizationSerializer(organization, many=True)
+		return Response({
+			"data": serializer.data,
+			"message": "Organization retrieved successfully"
+		}, status=status.HTTP_200_OK)
 
-		# Check if entry does not exists
+	# update org
+	def put(self, request, id, format=None):
+		organization = Organization.objects.filter(id=id)
+
+		# check if entry does not exists
 		if not organization.exists():
 			return Response({
 				"message": "error organization does not exist"
 			}, status=status.HTTP_400_BAD_REQUEST)
 
+		# update entry
 		try:
 			organization = organization[0]
 			update_list = []
+			name = request.data.get("name")
 			if name:
 				organization.name = name
 				update_list.append("name")

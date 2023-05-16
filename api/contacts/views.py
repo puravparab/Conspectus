@@ -10,6 +10,7 @@ from .serializers import ContactSerializer
 from organizations.models import Organization
 
 class contact(APIView):
+	# Get all contacts
 	def get(self, request, format=None):
 		contacts = Contact.objects.all()
 
@@ -20,6 +21,7 @@ class contact(APIView):
 				"message": "No contacts found"
 			}, status=status.HTTP_404_NOT_FOUND)
 
+		# Get contacts
 		serializer = ContactSerializer(contacts, many=True)
 		return Response({
 			"data": serializer.data,
@@ -35,6 +37,7 @@ class contact(APIView):
 				"message": "No contact added"
 			}, status=status.HTTP_400_BAD_REQUEST)
 
+		# Iterate through all contacts and add them to the database
 		for contactData in data:
 			name = contactData["name"]
 			
@@ -58,6 +61,7 @@ class contact(APIView):
 			else:
 				workplace = None
 
+			# Add contact to database
 			try:
 				contact = Contact.objects.create(
 					name = name,
@@ -83,7 +87,9 @@ class contact(APIView):
 			"message": "successfully added contact"
 		}, status=status.HTTP_200_OK)
 
+
 class contactDetail(APIView):
+	# Get specific contact
 	def get(self, request, id, format=None):
 		contact = Contact.objects.filter(id=id)
 
@@ -94,20 +100,24 @@ class contactDetail(APIView):
 				"message": "This contact does not exist"
 			}, status=status.HTTP_404_NOT_FOUND)
 
+		# Get contact
 		serializer = ContactSerializer(contact, many=True)
 		return Response({
 			"data": serializer.data,
 			"message": "Contact successfully retrieved"
 		}, status=status.HTTP_200_OK)
 
+	# update specific contact
 	def put(self, request, id, format=None):
 		contact = Contact.objects.filter(id=id)
 
+		# If contact does not exist in db
 		if not contact.exists():
 			return Response({
 				"message": "error organization does not exist"
 			}, status=status.HTTP_400_BAD_REQUEST)
 
+		# Update entries of specified contact
 		try:
 			contact = contact[0]
 			update_list = []
