@@ -8,10 +8,6 @@ from rest_framework.views import APIView
 from .models import Contact
 from .serializers import ContactSerializer
 
-# @api_view(['GET'])
-# def contact(request, format=None):
-# 	return Response({}, status=status.HTTP_200_OK)
-
 class contact(APIView):
 	def get(self, request, format=None):
 		contacts = Contact.objects.all()

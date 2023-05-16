@@ -24,3 +24,35 @@ class organization(APIView):
 			"data": serializer.data,
 			"message": "Organization(s) retrieved successfully"
 		}, status=status.HTTP_200_OK)
+
+	def post(self, request):
+		name = request.data.get("name")
+
+		# Check if entry exists
+		organization = Organization.objects.filter(name=name)
+		if organization.exists():
+			return Response({
+				"message": "error organization already exists"
+			}, status=status.HTTP_400_BAD_REQUEST)
+
+		location_city = request.data.get("location_city")
+		location_country = request.data.get("location_country")
+		website = request.data.get("website")
+
+		try:
+			organization = Organization.objects.create(
+				name = name,
+				location_city = location_city,
+				location_country = location_country,
+				website = website
+			)
+			organization.save()
+			return Response({
+				"message": "successfully added organization"
+			}, status=status.HTTP_200_OK)
+
+		except Exception as e:
+			return Response({
+				"error": str(e),
+				"message": "error occured while adding organization"
+			})
