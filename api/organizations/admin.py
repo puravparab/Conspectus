@@ -5,7 +5,7 @@ from .models import Organization
 class OrganizationAdmin(admin.ModelAdmin):
 	list_display = [
 		"id", "name", "location_city", "location_country", "website",
-		"created_at", "last_modified"
+		 "last_modified", "created_at"
 	]
 
 	fields = [

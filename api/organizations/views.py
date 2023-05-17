@@ -108,24 +108,20 @@ class organizationDetail(APIView):
 			name = request.data.get("name")
 			if name:
 				organization.name = name
-				update_list.append("name")
 
 			location_city = request.data.get("location_city")
 			if location_city:
 				organization.location_city = location_city
-				update_list.append("location_city")
 
 			location_country = request.data.get("location_country")
 			if location_country:
 				organization.location_country = location_country
-				update_list.append("location_country")
 
 			website = request.data.get("website")
 			if website:
 				organization.website = website
-				update_list.append("website")
 
-			organization.save(update_fields=update_list)
+			organization.save()
 			return Response({
 				"message": "organization successfully updated"
 			}, status=status.HTTP_200_OK)

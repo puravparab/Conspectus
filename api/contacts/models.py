@@ -9,6 +9,7 @@ class Contact(models.Model):
 	email = models.EmailField(null=True, blank=True)
 	# Social media
 	workplace = models.ForeignKey(Organization, on_delete=models.SET_NULL, null=True, blank=True)
+	job = models.CharField(max_length=255, null=True, blank=True)
 	current_location_city = models.CharField(max_length=255, null=True, blank=True)
 	current_location_country = models.CharField(max_length=255, null=True, blank=True)
 

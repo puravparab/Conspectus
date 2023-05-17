@@ -53,6 +53,7 @@ class contact(APIView):
 			original_location_city = contactData["original_location_city"]
 			original_location_country = contactData["original_location_country"]
 			workplace = contactData["workplace"]
+			job = contactData["job"]
 
 			# Add workplace
 			organization = Organization.objects.filter(id=workplace)
@@ -74,7 +75,8 @@ class contact(APIView):
 					day_met = day_met,
 					original_location_city = original_location_city,
 					original_location_country = original_location_country,
-					workplace = workplace
+					workplace = workplace,
+					job=job
 				)
 				contact.save()
 			except Exception as e:
@@ -125,52 +127,42 @@ class contactDetail(APIView):
 			name = request.data.get("name")
 			if name:
 				contact.name = name
-				update_list.append("name")
 
 			email = request.data.get("email")
 			if email:
 				contact.email = email
-				update_list.append("email")
 
 			phone_number = request.data.get("phone_number")
 			if phone_number:
 				contact.phone_number = phone_number
-				update_list.append("phone_number")
 
 			current_location_city = request.data.get("current_location_city")
 			if current_location_city:
 				contact.current_location_city = current_location_city
-				update_list.append("current_location_city")
 
 			current_location_country = request.data.get("current_location_country")
 			if current_location_country:
 				contact.current_location_country = current_location_country
-				update_list.append("current_location_country")
 
 			importance = request.data.get("importance")
 			if importance:
 				contact.importance = importance
-				update_list.append("importance")
 
 			relationship = request.data.get("relationship")
 			if relationship:
 				contact.relationship = relationship
-				update_list.append("relationship")
 
 			day_met = request.data.get("day_met")
 			if day_met:
 				contact.day_met = day_met
-				update_list.append("day_met")
 
 			original_location_city = request.data.get("original_location_city")
 			if original_location_city:
 				contact.original_location_city = original_location_city
-				update_list.append("original_location_city")
 
 			original_location_country = request.data.get("original_location_country")
 			if original_location_country:
 				contact.original_location_country = original_location_country
-				update_list.append("original_location_country")
 
 			# Get organization
 			workplace = request.data.get("workplace")
@@ -181,9 +173,12 @@ class contactDetail(APIView):
 				else:
 					workplace = None
 				contact.workplace = workplace
-				update_list.append("workplace")
 
-			contact.save(update_fields=update_list)
+			job = request.data.get("job")
+			if job:
+				contact.job = job
+
+			contact.save()
 			return Response({
 				"message": "contact successfully updated"
 			}, status=status.HTTP_200_OK)
