@@ -1,0 +1,16 @@
+.pageLayout{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background: rgb(18,18,18);
+	width: 100%;
+	min-height: 100%;
+
+}
+
+@media (max-width: 900px){
+	.pageLayout{
+		width: 95%; 
+	}
+}
