@@ -1,6 +1,19 @@
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 const Home = () => {
+	const router = useRouter()
+
+	const toggleLightMode = () => {
+		const theme = localStorage.getItem('theme')
+		if (theme == 'dark'){
+			localStorage.setItem('theme', 'light')
+		} else{
+			localStorage.setItem('theme', 'dark')
+		}
+		router.reload()
+	}
+
 	return (
 		<>
 			<Head>
@@ -21,6 +34,7 @@ const Home = () => {
 			</Head>
 
 			<div>
+				<button onClick={toggleLightMode}>Btn</button>
 			</div>
 		</>
 	)

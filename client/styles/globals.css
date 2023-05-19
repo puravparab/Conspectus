@@ -28,7 +28,12 @@ h1,h2,h3,h4,h5,h6{
 	box-sizing: border-box;
 }
 
+:root {
+  --dark-bg-color:  rgb(40, 40, 40);
+  --light-bg-color:  rgb(255, 255, 255);
+}
+
 #__next {
 	height: 100%;
-	background: rgb(18,18,18);
+	background: var(--primary-bg-color);
 }

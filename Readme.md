@@ -27,8 +27,10 @@ docker compose down
 ```
 
 ### Without Docker Compose
+
 #### API only
-(Without Docker):
+##### (Without Docker):
+
 Run virtual environment using pipenv
 ```
 cd api
@@ -49,7 +51,7 @@ Run the server at http://127.0.0.1:8000 or http://localhost:8000
 python manage.py runserver 0.0.0.0:8000
 ```
 
-(With Docker):
+##### (With Docker):
 
 Create Image
 ```
@@ -62,7 +64,8 @@ docker run --env-file .env -p 8000:8000 conspectus-api
 ```
 
 #### Client only
-(Without Docker):
+##### (Without Docker):
+
 Install dependencies
 ```
 cd client
@@ -73,7 +76,7 @@ Run client
 npm run dev
 ```
 
-(With Docker):
+##### (With Docker):
 
 Create Image
 ```

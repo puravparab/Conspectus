@@ -1,16 +1,21 @@
-.pageLayout{
+.pageLayoutDark, .pageLayoutLight{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	background: rgb(18,18,18);
 	width: 100%;
 	min-height: 100%;
+}
 
+.pageLayoutDark{
+	background: var(--dark-bg-color);
+}
+.pageLayoutLight{
+	background: var(--light-bg-color);
 }
 
 @media (max-width: 900px){
-	.pageLayout{
-		width: 95%; 
+	.pageLayoutDark, .pageLayoutLight{
+		width: 95%;
 	}
 }
