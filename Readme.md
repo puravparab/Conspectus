@@ -54,11 +54,35 @@ python manage.py runserver 0.0.0.0:8000
 Create Image
 ```
 cd api
-docker build -t conspectus .
+docker build -t conspectus-api .
 ```
 Create and run container
 ```
-docker run --env-file .env -p 8000:8000 conspectus
+docker run --env-file .env -p 8000:8000 conspectus-api
+```
+
+#### Client only
+(Without Docker):
+Install dependencies
+```
+cd client
+npm ci
+```
+Run client
+```
+npm run dev
+```
+
+(With Docker):
+
+Create Image
+```
+cd api
+docker build -t conspectus-api .
+```
+Create and run container
+```
+docker run --env-file .env -p 8000:8000 conspectus-api
 ```
 
 ---

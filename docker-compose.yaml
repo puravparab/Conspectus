@@ -8,3 +8,13 @@ services:
       - api/.env
     ports:
       - "8000:8000"
+
+  client:
+    build: client
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client/pages:/app/pages
+      - ./client/public:/app/public
+      - ./client/styles:/app/styles
+      - ./client/components:/app/components
