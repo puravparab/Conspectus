@@ -1,0 +1,50 @@
+.headerContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background: var(--dark-platform-color);
+	width: 100%;
+	border-bottom: 1px solid var(--dark-platform-color);
+}
+.headerMain{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 2500px;
+	width: 100%;
+	padding: 0px 50px 0px 20px;
+}
+
+.headerTitle{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px 0px;
+	max-width: 300px;
+	width: 100%;
+	padding: 12px 0px;
+}
+.headerTitle h1{
+	font-size: 24px;
+	font-weight: 500;
+	color: var(--dark-primary-heading);
+}
+.headerTitle p{
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--dark-primary-text);
+}
+
+.headerRight{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.headerRight p{
+	font-size: 25px;
+}

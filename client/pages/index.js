@@ -1,19 +1,6 @@
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 const Home = () => {
-	const router = useRouter()
-
-	const toggleLightMode = () => {
-		const theme = localStorage.getItem('theme')
-		if (theme == 'dark'){
-			localStorage.setItem('theme', 'light')
-		} else{
-			localStorage.setItem('theme', 'dark')
-		}
-		router.reload()
-	}
-
 	return (
 		<>
 			<Head>
@@ -32,10 +19,6 @@ const Home = () => {
 				<meta name="twitter:site" content="" />
 				<meta name="twitter:description" content="Personal Dashboard" />
 			</Head>
-
-			<div>
-				<button onClick={toggleLightMode}>Btn</button>
-			</div>
 		</>
 	)
 }

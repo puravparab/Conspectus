@@ -29,11 +29,15 @@ h1,h2,h3,h4,h5,h6{
 }
 
 :root {
-  --dark-bg-color:  rgb(40, 40, 40);
+	--dark-bg-color:  rgb(22, 25, 30);
+  --dark-platform-color: rgb(28, 30, 34);
+  --dark-primary-heading: rgb(244, 96, 62);
+  --dark-primary-text: rgb(255, 255, 255);
+  --dark-secondary-text: rgb(165, 165, 165);
+
   --light-bg-color:  rgb(255, 255, 255);
 }
 
 #__next {
 	height: 100%;
-	background: var(--primary-bg-color);
 }

@@ -5,6 +5,7 @@
 	align-items: center;
 	width: 100%;
 	min-height: 100%;
+	margin: 0px auto;
 }
 
 .pageLayoutDark{
@@ -16,6 +17,6 @@
 
 @media (max-width: 900px){
 	.pageLayoutDark, .pageLayoutLight{
-		width: 95%;
+		width: 100%;
 	}
 }
