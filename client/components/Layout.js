@@ -21,7 +21,9 @@ const Layout = ({ children }) => {
 		<>
 			<div className={IsLightMode? styles.pageLayoutLight : styles.pageLayoutDark}>
 				<Header />
-				{ children }
+				<div className={styles.pageBodyLayout}>
+					{ children }
+				</div>
 			</div>
 		</>
 	)

@@ -14,6 +14,8 @@ git clone https://github.com/puravparab/Conspectus.git
 cd Conspectus
 ```
 
+---
+
 ### Using Docker Compose
 Run docker compose to run the application
 ```
@@ -26,10 +28,12 @@ Stop running application
 docker compose down
 ```
 
+---
+
 ### Without Docker Compose
 
-#### API only
-##### (Without Docker):
+#### 1. API only
+##### - (Without Docker):
 
 Run virtual environment using pipenv
 ```
@@ -51,7 +55,7 @@ Run the server at http://127.0.0.1:8000 or http://localhost:8000
 python manage.py runserver 0.0.0.0:8000
 ```
 
-##### (With Docker):
+##### - (With Docker):
 
 Create Image
 ```
@@ -63,8 +67,10 @@ Create and run container
 docker run --env-file .env -p 8000:8000 conspectus-api
 ```
 
-#### Client only
-##### (Without Docker):
+---
+
+#### 2. Client only
+##### - (Without Docker):
 
 Install dependencies
 ```
@@ -76,7 +82,7 @@ Run client
 npm run dev
 ```
 
-##### (With Docker):
+##### - (With Docker):
 
 Create Image
 ```

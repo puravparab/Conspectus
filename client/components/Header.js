@@ -40,7 +40,7 @@ const Header = () => {
 			<div className={styles.headerMain}>
 				<div className={styles.headerTitle}>
 					<Link href='/'><h1>Conspectus</h1></Link>
-					<p>Welcome, Purav!</p>
+					{/* <p>Welcome!</p> */}
 				</div>
 
 				{/* Navbar */}

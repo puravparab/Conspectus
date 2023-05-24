@@ -1,0 +1,70 @@
+/* Contacts Page */
+.contactContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+}
+
+/* Contacts Nav */
+.contactNav{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 20px 0px;
+	background: var(--dark-platform-color);
+	color: var(--dark-primary-text);
+	padding: 20px 0px;
+	width: 220px;
+}
+
+.contactNavSections{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+}
+
+.contactNavItem{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0px 10px;
+	width: 100%;
+	padding: 5px 20px;
+}
+.contactNavItem:hover{
+	background: var(--dark-primary-heading);
+}
+.contactNavItem h3{
+	font-size: 22px;
+	font-weight: 700;
+}
+
+.contactNavSections ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+.contactNavSections ul li{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	padding: 5px 0px 5px 50px;
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--dark-secondary-text);
+	cursor: pointer;
+}
+.contactNavSections ul li:hover{
+	background: var(--dark-primary-heading);
+	color: var(--dark-primary-text)
+}
