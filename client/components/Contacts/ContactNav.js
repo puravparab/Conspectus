@@ -11,7 +11,7 @@ const ContactNav = () => {
 					<h3>Contacts</h3>
 				</Link>
 				<ul>
-					<li>Importan</li>
+					<li>Important</li>
 					<li>Reminders</li>
 					<li>Map</li>
 					<li>Graph</li>

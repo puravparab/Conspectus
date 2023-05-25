@@ -34,6 +34,7 @@ h1,h2,h3,h4,h5,h6{
 	--dark-bg-color:  rgb(22, 25, 30);
   --dark-platform-color: rgb(28, 30, 34);
   --dark-primary-heading: rgb(244, 96, 62);
+  --dark-primary-heading-hover: rgb(231, 118, 92);
   --dark-primary-text: rgb(255, 255, 255);
   --dark-secondary-text: rgb(165, 165, 165);
 

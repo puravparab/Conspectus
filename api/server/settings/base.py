@@ -46,6 +46,8 @@ INSTALLED_APPS = [
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
 
+	# djanog-cors-headers
+	'corsheaders',
 	# django-rest-framework
 	'rest_framework',
 
@@ -58,6 +60,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',
 
+	# django-cors-headers
+	'corsheaders.middleware.CorsMiddleware',
 	# whitenoise
 	"whitenoise.middleware.WhiteNoiseMiddleware",
 
@@ -131,6 +135,16 @@ AUTH_PASSWORD_VALIDATORS = [
 	{
 		'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
 	},
+]
+
+
+# CORS
+CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS").split(' ')
+
+CORS_ALLOW_METHODS = [
+	'GET',
+	'OPTIONS',
+	'POST'
 ]
 
 

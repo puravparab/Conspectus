@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../../styles/contacts.module.css'
 
 import ContactNav from '../../components/Contacts/ContactNav.js'
+import ContactDash from '../../components/Contacts/ContactDash.js'
 
 const Contacts = () => {
 	return (
@@ -26,6 +27,7 @@ const Contacts = () => {
 
 			<div className={styles.contactContainer}>
 				<ContactNav />
+				<ContactDash />
 			</div>
 		</>
 	)
