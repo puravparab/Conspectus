@@ -148,8 +148,8 @@
 }
 
 .contactDashMain th, .contactDashMain td {
-  padding: 20px 20px;
-  text-align: left;
+	padding: 10px 10px;
+	text-align: left;
 }
 .contactDashMain th{
 	padding: 25px 20px 15px 20px;
@@ -159,6 +159,7 @@
 	background: none;
 }
 .contactDashMain td{
+	font-size: 14px;
 }
 .contactDashMain tbody tr:hover {
 	background: var(--dark-primary-heading-hover);
@@ -206,3 +207,76 @@
 .ContactCardText h5, .ContactCardText p{
 	font-size: 15px;
 }
+
+/* Contact Form */
+.ContactFormContainer{
+	display: flex;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(0,0,0, 0.7); /* Black w/ opacity */
+}
+.ContactForm{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin: auto;
+	background: var(--dark-platform-color);
+	padding: 20px 40px 50px 40px;
+	border-radius: 25px;
+}
+.ContactFormHeader{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+}
+.ContactFormHeader span{
+	font-size: 20px;
+	color: var(--dark-primary-text);
+	cursor: pointer;
+}
+.ContactFormHeader span:hover{
+	color: var(--dark-secondary-text);
+	transition: 0.3s;
+}
+
+.ContactFormBody{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 20px 0px;
+}
+
+.ContactFormBody form{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 0px 50px;
+	width: 100%;
+}
+.contactFormSection{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 400px;
+}
+.contactFormSection label{
+	font-size: 18px;
+	color: var(--dark-primary-text);
+	padding: 0px 0px 10px 0px;
+}
+.contactFormSection input{
+	margin: 0px 0px 15px 0px;
+	width: 100%;
+}
+

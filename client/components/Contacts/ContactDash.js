@@ -4,12 +4,14 @@ import { useTable } from 'react-table'
 
 import axios from 'axios';
 import getConfig from 'next/config';
+import { AddContactModal } from './ContactForm.js'
 import styles from '../../styles/contacts.module.css'
 
 const { publicRuntimeConfig } = getConfig();
 
 const ContactDash = () => {
 	const [contactData, setContactData] = useState([])
+	const [dataLength, setDataLength] = useState(0)
 	const data = React.useMemo(() => contactData, [contactData])
 	const columns = React.useMemo(
 		() => [
@@ -24,6 +26,10 @@ const ContactDash = () => {
 			{
 				Header: 'Phone Number',
 				accessor: 'phone_number',
+			},
+			{
+				Header: 'Relationship',
+				accessor: 'relationship',
 			},
 			{
 				Header: 'Workplace',
@@ -41,13 +47,33 @@ const ContactDash = () => {
 				Header: 'Country',
 				accessor: 'current_location_country',
 			},
+			{
+				Header: 'Importance',
+				accessor: 'importance',
+			},
 		],
 		[]
 	)
 
+
 	// Contact Card
 	const [DisplayContactCard, setDisplayContactCard] = useState(false)
 	const [ContactCardDetails, setContactCardDetails] = useState({})
+
+	// Open modal when add contact button is clicked
+	const [showModal, setShowModal] = useState(false)
+	const handleAddContact = () => {
+		if (showModal === true){setShowModal(false)}
+		else {setShowModal(true)}
+		// const url = publicRuntimeConfig.SERVER_URL + "/api/contacts/"
+		// axios.post(url, { contacts: []})
+		// 	.then((response) => {
+		// 		console.log(response)
+		// 	})
+		// 	.catch((error) => {
+		// 		console.log(error)
+		// 	})
+	}
 
 	// Behavior when user clicks on a row
 	const handleEntrySelect = (row) => {
@@ -79,6 +105,7 @@ const ContactDash = () => {
 		axios.get(url)
 			.then((response) => {
 				setContactData(response.data.data)
+				setDataLength(response.data.data.length)
 			})
 			.catch((error) => {
 				console.log(error)
@@ -99,10 +126,11 @@ const ContactDash = () => {
 			<div className={styles.contactDashHeader}>
 				<div className={styles.contactDashTitle}>
 					<h3>All contacts</h3>
-					<p>800 total contacts</p>
+					<p>{dataLength} total contacts</p>
 				</div>
 				<div className={styles.contactDashOther}>
-					<button><span>+ Add Contact</span></button>
+					<button onClick={handleAddContact}><span>+ Add Contact</span></button>
+					{showModal && <AddContactModal handleAddContact={handleAddContact}/>}
 				</div>
 			</div>
 
@@ -156,9 +184,11 @@ const ContactDash = () => {
 							<h4>{ContactCardDetails.name}</h4>
 							<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
 							<div className={styles.ContactCardText}><h5>Phone No:</h5><p>{ContactCardDetails.phone_number}</p></div>
-							<div className={styles.ContactCardText}><h5>Workplace:</h5><p>{ContactCardDetails.workplace}</p></div>
-							<div className={styles.ContactCardText}><h5>Job:</h5><p>{ContactCardDetails.job}</p></div>
+							<div className={styles.ContactCardText}><h5>Relationship:</h5><p>{ContactCardDetails.relationship}</p></div>
+							<div className={styles.ContactCardText}><h5>Job:</h5><p>{ContactCardDetails.job} at {ContactCardDetails.workplace}</p></div>
 							<div className={styles.ContactCardText}><h5>Location:</h5><p>{ContactCardDetails.current_location_city}, {ContactCardDetails.current_location_country}</p></div>
+							<div className={styles.ContactCardText}><h5>Day met:</h5><p>{ContactCardDetails.day_met}</p></div>
+							<div className={styles.ContactCardText}><h5>Location:</h5><p>{ContactCardDetails.original_location_city}, {ContactCardDetails.original_location_country}</p></div>
 						</div>
 					</div>
 				}
