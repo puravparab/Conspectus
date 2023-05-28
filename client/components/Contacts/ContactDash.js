@@ -96,12 +96,21 @@ const ContactDash = () => {
 		const url = publicRuntimeConfig.SERVER_URL + "/api/contacts/"
 		axios.get(url)
 			.then((response) => {
-				setContactData(response.data.data)
-				setDataLength(response.data.data.length)
+				const cleaned_data = cleanData(response.data.data)
+				setContactData(cleaned_data)
+				setDataLength(cleaned_data.length)
 			})
 			.catch((error) => {
 				console.log(error)
 			})
+	}
+	const cleanData = (data) => {
+		for (let i=0; i < data.length; i++){
+			for (const key in data[i]) {
+				if (data[i][key] == null || data[i][key] === ""){data[i][key] = "-"}
+			}
+		}
+		return data
 	}
 
 	const tableInstance = useTable({ columns, data })

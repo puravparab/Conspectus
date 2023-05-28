@@ -152,7 +152,7 @@
 	text-align: left;
 }
 .contactDashMain th{
-	padding: 25px 20px 15px 20px;
+	padding: 25px 10px 15px 10px;
 	border-bottom: 1px solid var(--dark-primary-heading-hover);
 }
 .contactDashMain thead tr:hover {
