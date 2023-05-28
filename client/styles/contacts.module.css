@@ -227,8 +227,13 @@
 	align-items: center;
 	margin: auto;
 	background: var(--dark-platform-color);
-	padding: 20px 40px 50px 40px;
+	padding: 20px 40px 30px 40px;
 	border-radius: 25px;
+}
+.ContactForm h3{
+	font-size: 25px;
+	color: var(--dark-primary-heading);
+	position: fixed;
 }
 .ContactFormHeader{
 	display: flex;
@@ -239,12 +244,29 @@
 }
 .ContactFormHeader span{
 	font-size: 20px;
-	color: var(--dark-primary-text);
+	color: var(--dark-primary-heading);
 	cursor: pointer;
+	
 }
 .ContactFormHeader span:hover{
 	color: var(--dark-secondary-text);
 	transition: 0.3s;
+}
+
+.ContactFormOptions{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0px 5px 0px;
+}
+.ContactFormOptions p{
+	font-size: 16px;
+	color: var(--dark-primary-text);
+}
+.ContactFormOptions span:hover{
+	color: var(--dark-primary-heading);
+	cursor: pointer;
 }
 
 .ContactFormBody{
@@ -252,7 +274,19 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 20px 0px;
+	padding: 30px 0px;
+}
+
+.ContactFormBody textarea{
+	width: 600px;
+	height: 500px;
+	outline: none;
+	font-size: 18px;
+	color: var(--dark-primary-text);
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 8px;
+	background: var(--dark-platform-color);
+	padding: 5px 5px;
 }
 
 .ContactFormBody form{
@@ -278,5 +312,11 @@
 .contactFormSection input{
 	margin: 0px 0px 15px 0px;
 	width: 100%;
+	outline: none;
+	font-size: 18px;
+	color: var(--dark-primary-text);
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 8px;
+	background: var(--dark-platform-color);
+	padding: 5px 5px;
 }
-

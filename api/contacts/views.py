@@ -83,7 +83,7 @@ class contact(APIView):
 				return Response({
 					"error": str(e),
 					"message": "error occured while adding contacts"
-				})
+				}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 		return Response({
 			"message": "successfully added contact"

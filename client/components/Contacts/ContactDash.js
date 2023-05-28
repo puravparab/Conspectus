@@ -65,14 +65,6 @@ const ContactDash = () => {
 	const handleAddContact = () => {
 		if (showModal === true){setShowModal(false)}
 		else {setShowModal(true)}
-		// const url = publicRuntimeConfig.SERVER_URL + "/api/contacts/"
-		// axios.post(url, { contacts: []})
-		// 	.then((response) => {
-		// 		console.log(response)
-		// 	})
-		// 	.catch((error) => {
-		// 		console.log(error)
-		// 	})
 	}
 
 	// Behavior when user clicks on a row
