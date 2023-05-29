@@ -192,7 +192,14 @@
 	font-size: 18px;
 	font-weight: 700;
 	color: var(--dark-primary-text);
+	padding: 0px 0px 5px 0px;
+}
+.ContactCardBody span{
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--dark-secondary-text);
 	padding: 0px 0px 15px 0px;
+	cursor: pointer;
 }
 
 .ContactCardText{

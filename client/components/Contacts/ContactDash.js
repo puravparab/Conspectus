@@ -4,7 +4,7 @@ import { useTable } from 'react-table'
 
 import axios from 'axios';
 import getConfig from 'next/config';
-import { AddContactModal } from './ContactForm.js'
+import { AddContactModal, EditContactModal } from './ContactForm.js'
 import styles from '../../styles/contacts.module.css'
 
 const { publicRuntimeConfig } = getConfig();
@@ -67,9 +67,17 @@ const ContactDash = () => {
 		else {setShowModal(true)}
 	}
 
+	// Open modal when edit contact button is clicked
+	const [showEditModal, setShowEditModal] = useState(false)
+	const handleEditContact = () => {
+		if (showEditModal === true){setShowEditModal(false)}
+		else {setShowEditModal(true)}
+	}
+
 	// Behavior when user clicks on a row
 	const handleEntrySelect = (row) => {
 		setContactCardDetails({
+			"id": row.original["id"],
 			"name": row.original["name"],
 			"email": row.original["email"],
 			"phone_number": row.original["phone_number"],
@@ -104,6 +112,7 @@ const ContactDash = () => {
 				console.log(error)
 			})
 	}
+	// Change null and empty values for cleaner display
 	const cleanData = (data) => {
 		for (let i=0; i < data.length; i++){
 			for (const key in data[i]) {
@@ -124,6 +133,9 @@ const ContactDash = () => {
 
 	return (
 		<div className={styles.contactDashContainer}>
+			{showModal && <AddContactModal handleAddContact={handleAddContact}/>}
+			{showEditModal && <EditContactModal data={ContactCardDetails} handleEditContact={handleEditContact} />}
+
 			<div className={styles.contactDashHeader}>
 				<div className={styles.contactDashTitle}>
 					<h3>All contacts</h3>
@@ -131,7 +143,6 @@ const ContactDash = () => {
 				</div>
 				<div className={styles.contactDashOther}>
 					<button onClick={handleAddContact}><span>+ Add Contact</span></button>
-					{showModal && <AddContactModal handleAddContact={handleAddContact}/>}
 				</div>
 			</div>
 
@@ -183,6 +194,8 @@ const ContactDash = () => {
 						<img width="100" height="100" src="https://img.icons8.com/doodle/96/user-male-circle.png" alt="user-male-circle"/>
 						<div className={styles.ContactCardBody}>
 							<h4>{ContactCardDetails.name}</h4>
+							<span onClick={handleEditContact}>Edit</span>
+
 							<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
 							<div className={styles.ContactCardText}><h5>Phone No:</h5><p>{ContactCardDetails.phone_number}</p></div>
 							<div className={styles.ContactCardText}><h5>Relationship:</h5><p>{ContactCardDetails.relationship}</p></div>
