@@ -19,9 +19,9 @@ cd Conspectus
 ### Using Docker Compose
 Run docker compose to run the application
 ```
-docker compose up
+docker compose up --build
 // or run in detached mode
-docker compose up -d
+docker compose up --build -d
 ```
 Stop running application
 ```
