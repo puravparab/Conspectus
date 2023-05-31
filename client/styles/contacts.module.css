@@ -59,14 +59,20 @@
 	align-items: flex-start;
 	width: 100%;
 	padding: 5px 0px 5px 60px;
+	cursor: pointer;
+}
+.contactNavSections ul li a{
+	width: 100%;
 	font-size: 18px;
 	font-weight: 700;
 	color: var(--dark-secondary-text);
-	cursor: pointer;
 }
 .contactNavSections ul li:hover{
 	background: var(--dark-primary-heading-hover);
-	color: var(--dark-primary-text)
+	color: var(--dark-primary-text);
+}
+.contactNavSections ul li:hover > a{
+	color: var(--dark-primary-text);
 }
 
 /* Contact Dashboard */
@@ -326,4 +332,13 @@
 	border-radius: 8px;
 	background: var(--dark-platform-color);
 	padding: 5px 5px;
+}
+
+
+/* CONTACT PRIORITY */
+.contactPriorityContainer{
+
+}
+.contactPrioritySection{
+	
 }

@@ -165,14 +165,14 @@ export const EditContactModal = (props) => {
 		// Validate
 		const editChanges = {}
 		for (const key in details){
-			if (details[key] == "" || details[key] == null){editChanges[key] = null}
+			if (details[key] == "" || details[key] == null){editChanges[key] = "-"}
 			else{editChanges[key] = details[key]}
 		}
 
 		axios.put(url, editChanges)
 			.then((response) => {
 				console.log(response)
-				// router.reload();
+				router.reload();
 			})
 			.catch((response) => {
 				console.log(response)

@@ -48,7 +48,7 @@ const ContactDash = () => {
 				accessor: 'current_location_country',
 			},
 			{
-				Header: 'Importance',
+				Header: 'Priority',
 				accessor: 'importance',
 			},
 		],

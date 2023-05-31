@@ -11,10 +11,10 @@ const ContactNav = () => {
 					<h3>Contacts</h3>
 				</Link>
 				<ul>
-					<li>Important</li>
-					<li>Reminders</li>
-					<li>Map</li>
-					<li>Graph</li>
+					<li><Link href="/contacts/priority">Priority</Link></li>
+					<li><Link href="/contacts/">Reminders</Link></li>
+					<li><Link href="/contacts/">Map</Link></li>
+					<li><Link href="/contacts/">Graph</Link></li>
 				</ul>
 			</div>
 			<div className={styles.contactNavSections}>
@@ -23,10 +23,10 @@ const ContactNav = () => {
 					<h3>Groups</h3>
 				</Link>
 				<ul>
-					<li>Work</li>
-					<li>School</li>
-					<li>Hiking</li>
-					<li>Community</li>
+					<li><Link href="/contacts/">Work</Link></li>
+					<li><Link href="/contacts/">School</Link></li>
+					<li><Link href="/contacts/">Hiking</Link></li>
+					<li><Link href="/contacts/">Community</Link></li>
 				</ul>
 			</div>
 			<div className={styles.contactNavSections}>
