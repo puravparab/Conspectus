@@ -102,7 +102,7 @@
 .contactDashTitle h3{
 	font-size: 22px;
 	font-weight: 700;
-	color: var(--dark-primary-text);
+	color: var(--dark-primary-heading);
 }
 .contactDashTitle p{
 	font-size: 16px;
@@ -357,9 +357,9 @@
 	justify-content: center;
 	align-items: center;
 	gap: 0px 10px;
-	padding: 10px 25px;
-	border-radius: 12px;
-	background: var(--dark-platform-color);
+	padding: 12px 30px;
+	border-radius: 10px;
+/*	background: var(--dark-platform-color);*/
 }
 .contactPriorityTitle h4{
 	font-size: 18px;
@@ -367,7 +367,7 @@
 	color: var(--dark-primary-heading);
 }
 .contactPriorityTitle p{
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	color: var(--dark-secondary-text);
 }
@@ -377,9 +377,8 @@
 	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	border: 1px solid var(--dark-platform-color);
+	box-shadow: 0px 0px 2px var(--dark-primary-heading);
 	margin: 30px 0px;
-
 }
 .contactPriorityItem{
 	display: flex;
@@ -391,6 +390,16 @@
 	cursor: pointer;
 	background: var(--dark-platform-color);
 }
+.contactPriorityItemActive{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	padding: 20px 20px;
+	cursor: pointer;
+	background: var(--dark-primary-heading);
+}
 .contactPriorityItem:hover{
 	background: var(--dark-primary-heading);
 }
@@ -401,4 +410,26 @@
 	font-size: 18px;
 	font-weight: 700;
 	color: var(--dark-secondary-text);
+}
+.contactPriorityItemActive p{
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--dark-primary-text);
+}
+
+.contactPriorityItemCard{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	border: 1px solid var(--dark-primary-heading);
+	width: 100%;
+}
+.contactPriorityItemCard h5{
+	font-size: 14px;
+	font-weight: 500;
+}
+.contactPriorityItemCard p{
+	font-size: 14px;
+	font-weight: 300;
 }

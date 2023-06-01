@@ -19,12 +19,6 @@ const ContactDashPriority = () => {
 		"low": [],
 		"none": []
 	})
-	const [contactComponents, setContactComponents] = useState({
-		"high": "",
-		"medium": "",
-		"low": "",
-		"none": ""
-	})
 	const [dataLength, setDataLength] = useState({
 		"high": 0,
 		"medium": 0,
@@ -37,11 +31,6 @@ const ContactDashPriority = () => {
 	useEffect(() => {
 		getContactData()
 	}, [])
-
-	// Rerender when contactData state is changed
-	useEffect(() => {
-
-	}, [contactData])
 
 	// Get contact data from api
 	const getContactData = () =>{
@@ -73,10 +62,16 @@ const ContactDashPriority = () => {
 		for (let i=0; i < data.length; i++){
 			data_length["total"] += 1
 
+			// Determine priority
 			let category = "none"
 			if (data[i].importance == "High"){category = "high"}
 			else if (data[i].importance == "Medium"){category = "medium"}
 			else if (data[i].importance == "Low"){category = "low"}
+
+			// Process null or empty values
+			for (const key in data[i]) {
+				if (data[i][key] == null || data[i][key] === ""){data[i][key] = "-"}
+			}
 
 			priority_data[category].push(data[i])
 			data_length[category] += 1
@@ -104,6 +99,35 @@ const ContactDashPriority = () => {
 	}
 
 	// // // //
+	// CARDS
+	// // // //
+	
+	// Display contact card
+	const [CardID, setCardID] = useState(-1)
+	const [ContactCardDetails, setContactCardDetails] = useState({})
+
+	// Behavior when user clicks on a row
+	const handleEntrySelect = (row) => {
+		setContactCardDetails({
+			"id": row.id,
+			"name": row.name,
+			"email": row.email,
+			"phone_number": row.phone_number,
+			"workplace": row.workplace,
+			"job": row.job,
+			"current_location_city": row.current_location_city,
+			"current_location_country": row.current_location_country,
+			"importance": row.importance,
+			"relationship": row.relationship,
+			"day_met": row.day_met,
+			"original_location_city": row.original_location_city,
+			"original_location_country": row.original_location_country
+		})
+		if (CardID == row.id){setCardID(-1)}
+		else {setCardID(row.id)}
+	}
+
+	// // // //
 	// COMPONENT RENDER
 	// // // //
 
@@ -126,52 +150,88 @@ const ContactDashPriority = () => {
 				<div className={styles.contactPriorityContainer}>
 					<div className={styles.contactPrioritySection}>
 						<div className={styles.contactPriorityTitle}>
-							<h4>High</h4>
+							<h4 style={{color: 'rgb(76, 175, 80)'}}>High</h4>
 							<p>{dataLength.high} contacts</p>
 						</div>
 						<div className={styles.contactPriorityList}>
 							{contactData["high"].map((contact) => (
-								<div key={contact.id} className={styles.contactPriorityItem}>
+								<div key={contact.id} className={CardID == contact.id? styles.contactPriorityItemActive : styles.contactPriorityItem} onClick={() => handleEntrySelect(contact)}>
 									<p>{contact.name}</p>
+									{CardID == contact.id &&
+										<div className={styles.contactPriorityItemCard}>
+											<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
+											<div className={styles.ContactCardText}><h5>Phone No:</h5><p>{ContactCardDetails.phone_number}</p></div>
+											<div className={styles.ContactCardText}><h5>Relationship:</h5><p>{ContactCardDetails.relationship}</p></div>
+											<div className={styles.ContactCardText}><h5>Job:</h5><p>{ContactCardDetails.job} at {ContactCardDetails.workplace}</p></div>
+											<div className={styles.ContactCardText}><h5>Location:</h5><p>{ContactCardDetails.current_location_city}, {ContactCardDetails.current_location_country}</p></div>
+										</div>
+									}
 								</div>
 							))}
 						</div>
 					</div>
 					<div className={styles.contactPrioritySection}>
 						<div className={styles.contactPriorityTitle}>
-							<h4>Medium</h4>
+							<h4 style={{color: 'rgb(139, 195, 74)'}}>Medium</h4>
 							<p>{dataLength.medium} contacts</p>
 						</div>
 						<div className={styles.contactPriorityList}>
 							{contactData["medium"].map((contact) => (
-								<div key={contact.id} className={styles.contactPriorityItem}>
+								<div key={contact.id} className={CardID == contact.id? styles.contactPriorityItemActive : styles.contactPriorityItem} onClick={() => handleEntrySelect(contact)}>
 									<p>{contact.name}</p>
+									{CardID == contact.id &&
+										<div className={styles.contactPriorityItemCard}>
+											<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
+											<div className={styles.ContactCardText}><h5>Phone No:</h5><p>{ContactCardDetails.phone_number}</p></div>
+											<div className={styles.ContactCardText}><h5>Relationship:</h5><p>{ContactCardDetails.relationship}</p></div>
+											<div className={styles.ContactCardText}><h5>Job:</h5><p>{ContactCardDetails.job} at {ContactCardDetails.workplace}</p></div>
+											<div className={styles.ContactCardText}><h5>Location:</h5><p>{ContactCardDetails.current_location_city}, {ContactCardDetails.current_location_country}</p></div>
+										</div>
+									}
 								</div>
 							))}
 						</div>
 					</div>
 					<div className={styles.contactPrioritySection}>
 						<div className={styles.contactPriorityTitle}>
-							<h4>Low</h4>
+							<h4 style={{color: 'rgb(205, 220, 57)'}}>Low</h4>
 							<p>{dataLength.low} contacts</p>
 						</div>
 						<div className={styles.contactPriorityList}>
 							{contactData["low"].map((contact) => (
-								<div key={contact.id} className={styles.contactPriorityItem}>
+								<div key={contact.id} className={CardID == contact.id? styles.contactPriorityItemActive : styles.contactPriorityItem} onClick={() => handleEntrySelect(contact)}>
 									<p>{contact.name}</p>
+									{CardID == contact.id &&
+										<div className={styles.contactPriorityItemCard}>
+											<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
+											<div className={styles.ContactCardText}><h5>Phone No:</h5><p>{ContactCardDetails.phone_number}</p></div>
+											<div className={styles.ContactCardText}><h5>Relationship:</h5><p>{ContactCardDetails.relationship}</p></div>
+											<div className={styles.ContactCardText}><h5>Job:</h5><p>{ContactCardDetails.job} at {ContactCardDetails.workplace}</p></div>
+											<div className={styles.ContactCardText}><h5>Location:</h5><p>{ContactCardDetails.current_location_city}, {ContactCardDetails.current_location_country}</p></div>
+										</div>
+									}
 								</div>
 							))}
 						</div>
 					</div>
 					<div className={styles.contactPrioritySection}>
 						<div className={styles.contactPriorityTitle}>
-							<h4>None</h4>
+							<h4 style={{ color: 'rgb(158, 158, 158)'}}>None</h4>
 							<p>{dataLength.none} contacts</p>
 						</div>
 						<div className={styles.contactPriorityList}>
 							{contactData["none"].map((contact) => (
-								<div key={contact.id} className={styles.contactPriorityItem}>
+								<div key={contact.id} className={CardID == contact.id? styles.contactPriorityItemActive : styles.contactPriorityItem} onClick={() => handleEntrySelect(contact)}>
 									<p>{contact.name}</p>
+									{CardID == contact.id &&
+										<div className={styles.contactPriorityItemCard}>
+											<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
+											<div className={styles.ContactCardText}><h5>Phone No:</h5><p>{ContactCardDetails.phone_number}</p></div>
+											<div className={styles.ContactCardText}><h5>Relationship:</h5><p>{ContactCardDetails.relationship}</p></div>
+											<div className={styles.ContactCardText}><h5>Job:</h5><p>{ContactCardDetails.job} at {ContactCardDetails.workplace}</p></div>
+											<div className={styles.ContactCardText}><h5>Location:</h5><p>{ContactCardDetails.current_location_city}, {ContactCardDetails.current_location_country}</p></div>
+										</div>
+									}
 								</div>
 							))}
 						</div>
