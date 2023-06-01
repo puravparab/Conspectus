@@ -46,13 +46,13 @@ const Header = () => {
 				{/* Navbar */}
 				<div className={styles.navbar}>
 					<div className={styles.navItem}>
-						<Link href="/contacts"><h2 className={router.pathname == '/contacts'? styles.navActive: ""}>Contacts</h2></Link>
+						<Link href="/contacts"><h2 className={router.pathname.split('/')[1] == 'contacts'? styles.navActive: ""}>Contacts</h2></Link>
 					</div>
 					<div className={styles.navItem}>
-						<Link href="/orgs"><h2 className={router.pathname == '/orgs'? styles.navActive: ""}>Orgs</h2></Link>
+						<Link href="/orgs"><h2 className={router.pathname.split('/')[1]== 'orgs'? styles.navActive: ""}>Orgs</h2></Link>
 					</div>
 					<div className={styles.navItem}>
-						<Link href="/notes"><h2 className={router.pathname == '/notes'? styles.navActive: ""}>Notes</h2></Link>
+						<Link href="/notes"><h2 className={router.pathname.split('/')[1] == 'notes'? styles.navActive: ""}>Notes</h2></Link>
 					</div>
 				</div>
 

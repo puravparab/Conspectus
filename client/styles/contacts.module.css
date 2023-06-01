@@ -337,8 +337,68 @@
 
 /* CONTACT PRIORITY */
 .contactPriorityContainer{
-
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	gap: 0px 40px;
 }
 .contactPrioritySection{
-	
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 300px;
+}
+.contactPriorityTitle{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0px 10px;
+	padding: 10px 25px;
+	border-radius: 12px;
+	background: var(--dark-platform-color);
+}
+.contactPriorityTitle h4{
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--dark-primary-heading);
+}
+.contactPriorityTitle p{
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--dark-secondary-text);
+}
+.contactPriorityList{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	border: 1px solid var(--dark-platform-color);
+	margin: 30px 0px;
+
+}
+.contactPriorityItem{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	padding: 20px 20px;
+	cursor: pointer;
+	background: var(--dark-platform-color);
+}
+.contactPriorityItem:hover{
+	background: var(--dark-primary-heading);
+}
+.contactPriorityItem:hover > p{
+	color: var(--dark-primary-text);
+}
+.contactPriorityItem p{
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--dark-secondary-text);
 }
