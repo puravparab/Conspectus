@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 
 from .models import Organization
 from .serializers import OrganizationSerializer
+from contacts.models import Contact
 
 class organization(APIView):
 	# Get organization
@@ -22,8 +23,15 @@ class organization(APIView):
 
 		# get all orgs
 		serializer = OrganizationSerializer(organizations, many=True)
+
+		org_data = serializer.data
+		# Get the number of contacts that work at each org
+		for index, org in enumerate(serializer.data):
+			contacts = Contact.objects.filter(workplace=org["id"])
+			org_data[index]['no_of_contacts'] = len(contacts)
+
 		return Response({
-			"data": serializer.data,
+			"data": org_data,
 			"message": "Organization(s) retrieved successfully"
 		}, status=status.HTTP_200_OK)
 
