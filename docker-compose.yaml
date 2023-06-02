@@ -8,6 +8,8 @@ services:
       - api/.env
     ports:
       - "8000:8000"
+    volumes:
+      - ./api/db.sqlite3:/app/db.sqlite3
 
   client:
     build: client

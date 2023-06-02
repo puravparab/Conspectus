@@ -27,7 +27,7 @@ class organization(APIView):
 		org_data = serializer.data
 		# Get the number of contacts that work at each org
 		for index, org in enumerate(serializer.data):
-			contacts = Contact.objects.filter(workplace=org["id"])
+			contacts = Contact.objects.filter(workplace=org['id'])
 			org_data[index]['no_of_contacts'] = len(contacts)
 
 		return Response({
@@ -94,8 +94,14 @@ class organizationDetail(APIView):
 
 		# get specified org
 		serializer = OrganizationSerializer(organization, many=True)
+
+		org_data = serializer.data
+		# Get the number of contacts that work at org
+		contacts = Contact.objects.filter(workplace=serializer.data[0]['id'])
+		org_data[0]['no_of_contacts'] = len(contacts)
+
 		return Response({
-			"data": serializer.data,
+			"data": org_data,
 			"message": "Organization retrieved successfully"
 		}, status=status.HTTP_200_OK)
 

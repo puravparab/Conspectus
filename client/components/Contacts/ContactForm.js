@@ -165,7 +165,7 @@ export const EditContactModal = (props) => {
 		// Validate
 		const editChanges = {}
 		for (const key in details){
-			if (details[key] == "" || details[key] == null){editChanges[key] = "-"}
+			if (details[key] == "" || details[key] == null || details[key] == '-'){}
 			else{editChanges[key] = details[key]}
 		}
 
