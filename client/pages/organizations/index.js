@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import styles from '../../styles/contacts.module.css'
+
+import OrgDash from '../../components/Organizations/OrgDash.js'
+import styles from '../../styles/organizations.module.css'
 
 const Orgs = () => {
 	return (
@@ -21,6 +23,10 @@ const Orgs = () => {
 				<meta name="twitter:site" content="" />
 				<meta name="twitter:description" content="Organizations" />
 			</Head>
+
+			<diV className={styles.orgContainer}>
+				<OrgDash />
+			</diV>
 		</>
 	)
 }

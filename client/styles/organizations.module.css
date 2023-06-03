@@ -1,0 +1,112 @@
+.orgContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.orgDashContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	padding: 20px;
+}
+
+.orgDashLeft{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	box-shadow: 0px 0px 3px var(--dark-primary-heading);
+	border-radius: 10px;
+	background: var(--dark-platform-color);
+	width: 180px;
+	min-width: 180px;
+}
+.orgDashLeft .orgDashLeftItem{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	padding: 8px 20px;
+	cursor: pointer;
+}
+.orgDashLeft .orgDashLeftItem:hover{
+	background: var(--dark-primary-heading);
+}
+.orgDashLeft .orgDashLeftItem span{
+	font-size: 18px;
+	font-weight: 300;
+	color: var(--dark-primary-text);
+}
+
+.orgDashMain{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-grow: 1;
+	margin: 20px 40px;
+}
+.orgDashHeader{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.orgDashTitle{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+.orgDashTitle h3{
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--dark-primary-heading);
+}
+.orgDashTitle p{
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--dark-secondary-text);
+}
+
+.orgDashBody{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 50px 40px;
+	flex-wrap: wrap;
+	padding: 40px 0px;
+	width: 100%;
+}
+.orgDashBodyItem{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	box-shadow: 0px 0px 2px var(--dark-primary-heading);
+	border-radius: 15px;
+	background: var(--dark-platform-color);
+	padding: 20px 25px;
+	width: 220px;
+}
+.orgDashBodyItem a h4{
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--dark-primary-text);
+}
+.orgDashBodyItem a h4:hover{
+	color: var(--dark-primary-heading);
+}
+.orgDashBodyItem p{
+	font-size: 16px;
+	font-weight: 400;
+	color: var(--dark-secondary-text);
+}
