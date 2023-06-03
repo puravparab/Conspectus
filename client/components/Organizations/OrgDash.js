@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import axios from 'axios';
 import getConfig from 'next/config';
+import { AddOrgModal } from './OrgForm.js'
 import styles from '../../styles/organizations.module.css'
 
 const { publicRuntimeConfig } = getConfig();
@@ -53,6 +54,18 @@ const OrgDash = () => {
 	}
 
 	// // // //
+	// MODALS
+	// // // //
+
+	// Open modal when add contact button is clicked
+	const [showModal, setShowModal] = useState(false)
+	const handleAddOrg = () => {
+		if (showModal === true){setShowModal(false)}
+		else {setShowModal(true)}
+	}
+
+
+	// // // //
 	// COMPONENT RENDER
 	// // // //
 	
@@ -64,6 +77,8 @@ const OrgDash = () => {
 
 	return (
 		<div className={styles.orgDashContainer}>
+			{showModal && <AddOrgModal handleAddOrg={handleAddOrg} location_city={selectedCity} location_country={orgData[selectedCity][0].location_country}/>}
+
 			<div className={styles.orgDashLeft}>
 				{Object.entries(orgData)
 					.sort()
@@ -79,8 +94,8 @@ const OrgDash = () => {
 				}
 			</div>
 			<div className={styles.orgDashMain}>
-				<div className={styles.orgDashHeader}>
-					{selectedCity && 
+				{selectedCity && 
+					<div className={styles.orgDashHeader}>
 						<div className={styles.orgDashTitle}>
 							<h3>{selectedCity}, {orgData[selectedCity][0].location_country}</h3>
 								<p>{orgData[selectedCity].length} total organizations</p>
@@ -90,8 +105,12 @@ const OrgDash = () => {
 									)} total contacts
 								</p>
 						</div>
-					}
-				</div>
+
+						<div className={styles.orgDashOther}>
+							<button onClick={handleAddOrg}><span>+ Add organization</span></button>
+						</div>
+					</div>
+				}
 				{selectedCity &&
 					<div className={styles.orgDashBody}>
 						{orgData[selectedCity]

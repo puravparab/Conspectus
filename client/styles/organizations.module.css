@@ -52,6 +52,8 @@
 	flex-grow: 1;
 	margin: 20px 40px;
 }
+
+/* ORG HEADER */
 .orgDashHeader{
 	display: flex;
 	flex-direction: row;
@@ -75,6 +77,32 @@
 	font-weight: 400;
 	color: var(--dark-secondary-text);
 }
+
+.orgDashOther{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.orgDashOther button{
+	background: var(--dark-primary-heading);
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	padding: 10px 10px;
+}
+.orgDashOther button span{
+	font-size: 16px;
+	color: var(--dark-primary-text);
+	text-align: center;
+}
+.orgtDashOther button:hover{
+	background: var(--dark-primary-heading-hover);
+	transition: 0.1s;
+}
+
+
+/* ORG BODY */
 
 .orgDashBody{
 	display: flex;
@@ -109,4 +137,117 @@
 	font-size: 16px;
 	font-weight: 400;
 	color: var(--dark-secondary-text);
+}
+
+/* ORG FORMs */
+.OrgFormContainer{
+	display: flex;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(0,0,0, 0.7); /* Black w/ opacity */
+}
+.OrgForm{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin: auto;
+	background: var(--dark-platform-color);
+	padding: 20px 40px 30px 40px;
+	border-radius: 25px;
+}
+.OrgForm h3{
+	font-size: 25px;
+	color: var(--dark-primary-heading);
+	position: fixed;
+}
+.OrgFormHeader{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+}
+.OrgFormHeader span{
+	font-size: 20px;
+	color: var(--dark-primary-heading);
+	cursor: pointer;
+	
+}
+.OrgFormHeader span:hover{
+	color: var(--dark-secondary-text);
+	transition: 0.3s;
+}
+
+.OrgFormOptions{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0px 5px 0px;
+}
+.OrgFormOptions p{
+	font-size: 16px;
+	color: var(--dark-primary-text);
+}
+.OrgFormOptions span:hover{
+	color: var(--dark-primary-heading);
+	cursor: pointer;
+}
+
+.OrgFormBody{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 30px 0px;
+}
+
+.OrgFormBody textarea{
+	width: 600px;
+	height: 500px;
+	outline: none;
+	font-size: 18px;
+	color: var(--dark-primary-text);
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 8px;
+	background: var(--dark-platform-color);
+	padding: 5px 5px;
+}
+
+.OrgFormBody form{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 0px 50px;
+	width: 100%;
+}
+.OrgFormSection{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 400px;
+}
+.OrgFormSection label{
+	font-size: 18px;
+	color: var(--dark-primary-text);
+	padding: 0px 0px 10px 0px;
+}
+.OrgFormSection input{
+	margin: 0px 0px 15px 0px;
+	width: 100%;
+	outline: none;
+	font-size: 18px;
+	color: var(--dark-primary-text);
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 8px;
+	background: var(--dark-platform-color);
+	padding: 5px 5px;
 }

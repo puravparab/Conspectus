@@ -24,9 +24,9 @@ const Orgs = () => {
 				<meta name="twitter:description" content="Organizations" />
 			</Head>
 
-			<diV className={styles.orgContainer}>
+			<div className={styles.orgContainer}>
 				<OrgDash />
-			</diV>
+			</div>
 		</>
 	)
 }
