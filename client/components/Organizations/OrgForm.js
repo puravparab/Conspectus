@@ -15,6 +15,7 @@ export const AddOrgModal = (props) => {
 	const [details, setDetails] = useState({
 		"name": "",
 		"website": "",
+		"image": "",
 		"location_city": props.location_city,
 		"location_country": props.location_country
 	})
@@ -52,7 +53,10 @@ export const AddOrgModal = (props) => {
 							<input type="text" value={details.name} onChange={(e) => handleDetailsChange(e, "name")} required />
 
 							<label>Website:</label>
-							<input type="text" value={details.email} onChange={(e) => handleDetailsChange(e, "website")} />							
+							<input type="text" value={details.email} onChange={(e) => handleDetailsChange(e, "website")} />
+
+							<label>Image:</label>
+							<input type="text" value={details.image} onChange={(e) => handleDetailsChange(e, "image")} />													
 						</div>
 
 						<div className={styles.OrgFormSection}>

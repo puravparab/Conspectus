@@ -16,6 +16,7 @@ export const AddContactModal = ( props ) => {
 		"name": "",
 		"email": "",
 		"phone_number": "",
+		"image": "",
 		"job": "",
 		"current_location_city": "",
 		"current_location_country": "",
@@ -102,7 +103,9 @@ export const AddContactModal = ( props ) => {
 
 								<label>Relationship:</label>
 								<input type="text" value={details.relationship} onChange={(e) => handleDetailsChange(e, "relationship")} />
-								
+
+								<label>Image:</label>
+								<input type="text" value={details.image} onChange={(e) => handleDetailsChange(e, "image")} />
 							</div>
 
 							<div className={styles.contactFormSection}>
@@ -146,6 +149,7 @@ export const EditContactModal = (props) => {
 		"email": props.data.email,
 		"phone_number": props.data.phone_number,
 		"job": props.data.job,
+		"image": props.data.image,
 		"current_location_city": props.data.current_location_city,
 		"current_location_country": props.data.current_location_country,
 		"importance": props.data.importance,
@@ -205,6 +209,8 @@ export const EditContactModal = (props) => {
 							<label>Relationship:</label>
 							<input type="text" value={details.relationship} onChange={(e) => handleDetailsChange(e, "relationship")} />
 							
+							<label>Image:</label>
+							<input type="text" value={details.image} onChange={(e) => handleDetailsChange(e, "image")} />
 						</div>
 
 						<div className={styles.contactFormSection}>
