@@ -7,7 +7,8 @@ class Contact(models.Model):
 	name = models.CharField(max_length=255)
 	phone_number = models.CharField(max_length=20, null=True, blank=True)
 	email = models.EmailField(null=True, blank=True)
-	# Social media
+	image = models.URLField(max_length=255, null=True, blank=True)
+	# TODO: Social media
 	workplace = models.ForeignKey(Organization, on_delete=models.SET_NULL, null=True, blank=True)
 	job = models.CharField(max_length=255, null=True, blank=True)
 	current_location_city = models.CharField(max_length=255, null=True, blank=True)

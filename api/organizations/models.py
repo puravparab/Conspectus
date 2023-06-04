@@ -5,6 +5,7 @@ class Organization(models.Model):
 	location_city = models.CharField(max_length=255, null=True, blank=True)
 	location_country = models.CharField(max_length=255, null=True, blank=True)
 	website = models.URLField(max_length=255, null=True, blank=True)
+	image = models.URLField(max_length=255, null=True, blank=True)
 	created_at = models.DateTimeField(auto_now_add=True)
 	last_modified = models.DateTimeField(auto_now=True)
 
