@@ -39,7 +39,9 @@ const ContactDash = () => {
 	const cleanData = (data) => {
 		for (let i=0; i < data.length; i++){
 			for (const key in data[i]) {
-				if (data[i][key] == null || data[i][key] === ""){data[i][key] = "-"}
+				if (key !== 'image'){
+					if (data[i][key] == null || data[i][key] === ""){data[i][key] = "-"}
+				}
 			}
 		}
 		return data
@@ -80,6 +82,7 @@ const ContactDash = () => {
 				"name": contactData[0]["name"],
 				"email": contactData[0]["email"],
 				"phone_number": contactData[0]["phone_number"],
+				"image": contactData[0]["image"],
 				"workplace": contactData[0]["workplace"],
 				"job": contactData[0]["job"],
 				"current_location_city": contactData[0]["current_location_city"],
@@ -99,6 +102,7 @@ const ContactDash = () => {
 			"name": row.original["name"],
 			"email": row.original["email"],
 			"phone_number": row.original["phone_number"],
+			"image": row.original["image"],
 			"workplace": row.original["workplace"],
 			"job": row.original["job"],
 			"current_location_city": row.original["current_location_city"],
@@ -235,7 +239,10 @@ const ContactDash = () => {
 				</table>
 
 				<div className={styles.contactCard}>
-					<img width="100" height="100" src="https://img.icons8.com/doodle/96/user-male-circle.png" alt="user-male-circle"/>
+					{ContactCardDetails.image? 
+						<img width="100" height="100" src={ContactCardDetails.image} alt={`${ContactCardDetails.name} image`} />
+						:<img width="100" height="100" src="https://img.icons8.com/doodle/96/user-male-circle.png" alt="user-male-circle"/>
+					}
 					<div className={styles.ContactCardBody}>
 						<h4>{ContactCardDetails.name}</h4>
 						<span onClick={handleEditContact}>Edit</span>

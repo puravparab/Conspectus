@@ -116,24 +116,38 @@
 }
 .orgDashBodyItem{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: flex-start;
 	align-items: flex-start;
+	gap: 0px 15px;
 	box-shadow: 0px 0px 2px var(--dark-primary-heading);
 	border-radius: 15px;
 	background: var(--dark-platform-color);
 	padding: 20px 25px;
 	width: 220px;
 }
-.orgDashBodyItem a h4{
+.orgDashBodyItemLeft{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 0px;
+}
+.orgDashBodyItemContent{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+.orgDashBodyItemContent a h4{
 	font-size: 22px;
 	font-weight: 700;
 	color: var(--dark-primary-text);
 }
-.orgDashBodyItem a h4:hover{
+.orgDashBodyItemContent a h4:hover{
 	color: var(--dark-primary-heading);
 }
-.orgDashBodyItem p{
+.orgDashBodyItemContent p{
 	font-size: 16px;
 	font-weight: 400;
 	color: var(--dark-secondary-text);

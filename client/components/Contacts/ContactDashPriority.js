@@ -70,7 +70,9 @@ const ContactDashPriority = () => {
 
 			// Process null or empty values
 			for (const key in data[i]) {
-				if (data[i][key] == null || data[i][key] === ""){data[i][key] = "-"}
+				if (key !== 'image'){
+					if (data[i][key] == null || data[i][key] === ""){data[i][key] = "-"}
+				}
 			}
 
 			priority_data[category].push(data[i])
@@ -156,7 +158,13 @@ const ContactDashPriority = () => {
 						<div className={styles.contactPriorityList}>
 							{contactData["high"].map((contact) => (
 								<div key={contact.id} className={CardID == contact.id? styles.contactPriorityItemActive : styles.contactPriorityItem} onClick={() => handleEntrySelect(contact)}>
-									<p>{contact.name}</p>
+									<div className={styles.contactPriorityItemHeader}>
+										{contact.image? 
+											<img width="30" height="30" src={contact.image} alt={`${contact.name} image`} />
+											:<img width="30" height="30" src="https://img.icons8.com/doodle/96/user-male-circle.png" alt="user-male-circle"/>
+										}
+										<p>{contact.name}</p>
+									</div>
 									{CardID == contact.id &&
 										<div className={styles.contactPriorityItemCard}>
 											<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
@@ -178,7 +186,13 @@ const ContactDashPriority = () => {
 						<div className={styles.contactPriorityList}>
 							{contactData["medium"].map((contact) => (
 								<div key={contact.id} className={CardID == contact.id? styles.contactPriorityItemActive : styles.contactPriorityItem} onClick={() => handleEntrySelect(contact)}>
-									<p>{contact.name}</p>
+									<div className={styles.contactPriorityItemHeader}>
+										{contact.image? 
+											<img width="30" height="30" src={contact.image} alt={`${contact.name} image`} />
+											:<img width="30" height="30" src="https://img.icons8.com/doodle/96/user-male-circle.png" alt="user-male-circle"/>
+										}
+										<p>{contact.name}</p>
+									</div>
 									{CardID == contact.id &&
 										<div className={styles.contactPriorityItemCard}>
 											<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
@@ -200,7 +214,13 @@ const ContactDashPriority = () => {
 						<div className={styles.contactPriorityList}>
 							{contactData["low"].map((contact) => (
 								<div key={contact.id} className={CardID == contact.id? styles.contactPriorityItemActive : styles.contactPriorityItem} onClick={() => handleEntrySelect(contact)}>
-									<p>{contact.name}</p>
+									<div className={styles.contactPriorityItemHeader}>
+										{contact.image? 
+											<img width="30" height="30" src={contact.image} alt={`${contact.name} image`} />
+											:<img width="30" height="30" src="https://img.icons8.com/doodle/96/user-male-circle.png" alt="user-male-circle"/>
+										}
+										<p>{contact.name}</p>
+									</div>
 									{CardID == contact.id &&
 										<div className={styles.contactPriorityItemCard}>
 											<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>
@@ -222,7 +242,13 @@ const ContactDashPriority = () => {
 						<div className={styles.contactPriorityList}>
 							{contactData["none"].map((contact) => (
 								<div key={contact.id} className={CardID == contact.id? styles.contactPriorityItemActive : styles.contactPriorityItem} onClick={() => handleEntrySelect(contact)}>
-									<p>{contact.name}</p>
+									<div className={styles.contactPriorityItemHeader}>
+										{contact.image? 
+											<img width="30" height="30" src={contact.image} alt={`${contact.name} image`} />
+											:<img width="30" height="30" src="https://img.icons8.com/doodle/96/user-male-circle.png" alt="user-male-circle"/>
+										}
+										<p>{contact.name}</p>
+									</div>
 									{CardID == contact.id &&
 										<div className={styles.contactPriorityItemCard}>
 											<div className={styles.ContactCardText}><h5>Email:</h5><p>{ContactCardDetails.email}</p></div>

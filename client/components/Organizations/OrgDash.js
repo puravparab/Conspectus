@@ -117,10 +117,19 @@ const OrgDash = () => {
 							.sort((a, b) => a.name.localeCompare(b.name))
 							.map((org, id) => (
 								<div className={styles.orgDashBodyItem} key={id}>
-									<a href={org.website} target="_blank" rel="noopener noreferrer">
-										<h4>{org.name}</h4>
-									</a>
-									<p>{org.no_of_contacts} contacts</p>
+									<div className={styles.orgDashBodyItemLeft}>
+										{org.image? 
+											<img width="25" height="25" src={org.image} alt={`${org.name} image`} />
+											:<img width="25" height="25" src="https://img.icons8.com/doodle/96/company--v1.png" alt="company--v1"/>
+										}
+									</div>
+									<div className={styles.orgDashBodyItemContent}>
+										<a href={org.website} target="_blank" rel="noopener noreferrer">
+											<h4>{org.name}</h4>
+										</a>
+										<p>{org.no_of_contacts} contacts</p>
+									</div>
+									
 								</div>
 							))
 						}

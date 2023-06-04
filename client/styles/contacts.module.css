@@ -186,6 +186,10 @@
 	padding: 20px 10px;
 }
 
+.contactCard img{
+	border-radius: 50%;
+}
+
 .ContactCardBody{
 	display: flex;
 	flex-direction: column;
@@ -403,18 +407,29 @@
 .contactPriorityItem:hover{
 	background: var(--dark-primary-heading);
 }
-.contactPriorityItem:hover > p{
+.contactPriorityItem:hover > .contactPriorityItemHeader p{
 	color: var(--dark-primary-text);
 }
-.contactPriorityItem p{
+.contactPriorityItem .contactPriorityItemHeader p{
 	font-size: 18px;
 	font-weight: 700;
 	color: var(--dark-secondary-text);
 }
-.contactPriorityItemActive p{
+.contactPriorityItemActive .contactPriorityItemHeader p{
 	font-size: 18px;
 	font-weight: 700;
 	color: var(--dark-primary-text);
+}
+
+.contactPriorityItemHeader{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0px 10px;
+}
+.contactPriorityItemHeader img{
+	border-radius: 50%;
 }
 
 .contactPriorityItemCard{
