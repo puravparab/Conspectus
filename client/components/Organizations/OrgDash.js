@@ -4,6 +4,7 @@ import Link from 'next/link'
 import axios from 'axios';
 import getConfig from 'next/config';
 import { AddOrgModal } from './OrgForm.js'
+import {DynamicOrgMap} from './Map/index.js'
 import styles from '../../styles/organizations.module.css'
 
 const { publicRuntimeConfig } = getConfig();
@@ -136,6 +137,9 @@ const OrgDash = () => {
 					</div>
 				}
 			</div>
+
+			{/* MAP */}
+			<DynamicOrgMap />
 		</div>
 	)
 }
