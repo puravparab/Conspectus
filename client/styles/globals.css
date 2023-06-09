@@ -44,3 +44,10 @@ h1,h2,h3,h4,h5,h6{
 #__next {
 	height: 100%;
 }
+
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+	filter: invert(100%) brightness(100%) contrast(100%) grayscale(100%);
+}

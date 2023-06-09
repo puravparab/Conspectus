@@ -1,0 +1,201 @@
+{
+	"Amsterdam": {
+		"latitude": 52.370216,
+		"longitude": 4.895168,
+		"country": "Netherlands",
+		"country_code": "NLD",
+		"state": null
+	},
+	"Armonk": {
+		"latitude": 41.126640,
+		"longitude": -73.713882,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "New York"
+	},
+	"Austin": {
+		"latitude": 30.267153,
+		"longitude": -97.743057,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Texas"
+	},
+	"Bozeman": {
+		"latitude": 45.676998,
+		"longitude": -111.042931,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Montana"
+	},
+	"Chicago": {
+		"latitude": 41.878113,
+		"longitude": -87.629799,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Illinois"
+	},
+	"Cupertino": {
+		"latitude": 37.322477,
+		"longitude": -122.032436,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"Dallas": {
+		"latitude": 32.779167,
+		"longitude": -96.808891,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Texas"
+	},
+	"Davis": {
+		"latitude": 38.544907,
+		"longitude": -121.740517,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"Dubai": {
+		"latitude": 25.168282,
+		"longitude": 55.250286,
+		"country": "United Arab Emirates",
+		"country_code": "ARE",
+		"state": null
+	},
+	"Evanston": {
+		"latitude": 42.045597,
+		"longitude": -87.688568,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Illinois"
+	},
+	"Irvine": {
+		"latitude": 33.669445,
+		"longitude":-117.823059,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"Los Gatos": {
+		"latitude": 37.235808,
+		"longitude": -121.962375,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"McLean": {
+		"latitude": 38.938305,
+		"longitude": -77.183266,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Virginia"
+	},
+	"Menlo Park": {
+		"latitude": 37.452961,
+		"longitude": -122.181725,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	}, 
+	"Mountain View": {
+		"latitude": 37.386051,
+		"longitude": -122.083855,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"New York City": {
+		"latitude": 40.71427,
+		"longitude": -74.00597,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "New York"
+	},
+	"Ottawa": {
+		"latitude": 45.424721,
+		"longitude": -75.695000,
+		"country": "Canada",
+		"state": "Ontario"
+	},
+	"Pleasanton": {
+		"latitude": 37.662431,
+		"longitude": -121.874679,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"Purchase": {
+		"latitude": 41.040014 ,
+		"longitude": -73.714448,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "New York"
+	},
+	"Redmond": {
+		"latitude": 44.272621,
+		"longitude": -121.173920,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Washington"
+	},
+	"Redwood City": {
+		"latitude": 37.487846,
+		"longitude": -122.236115,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"San Francisco": {
+		"latitude": 37.773972,
+		"longitude": -122.431297,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"San Jose": {
+		"latitude": 37.335480,
+		"longitude": -121.893028,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"Santa Clara": {
+		"latitude": 37.354107,
+		"longitude": -121.955238,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"Santa Monica": {
+		"latitude": 34.024212,
+		"longitude": -118.496475,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"Seattle": {
+		"latitude": 47.606209,
+		"longitude": -122.332071,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Washington"
+	},
+	"Stockholm": {
+		"latitude": 59.334591,
+		"longitude": 18.063240,
+		"country": "Sweden",
+		"state": null
+	},
+	"Sydney": {
+		"latitude": -33.870453,
+		"longitude": 151.208755,
+		"country": "Australia",
+		"state": null
+	},
+	"Tel Aviv": {
+		"latitude": 32.166313,
+		"longitude":  34.843311,
+		"country": "Israel",
+		"state": null
+	}
+}
