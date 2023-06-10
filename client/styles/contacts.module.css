@@ -448,3 +448,31 @@
 	font-size: 14px;
 	font-weight: 300;
 }
+
+/* CONTACT MAP */
+.contactsMapContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 40px 0px;
+	margin: 20px 50px;
+	width: 100%;
+}
+.contactsMapMain{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+}
+.contactsMapMain .map{
+	min-width: 1100px;
+	min-height: 700px;
+}
+.contactsMapMainRight{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}

@@ -139,7 +139,7 @@ const OrgDash = () => {
 			</div>
 
 			{/* MAP */}
-			<DynamicOrgMap data={orgData}/>
+			<DynamicOrgMap data={orgData} selectedCity={selectedCity}/>
 		</div>
 	)
 }

@@ -76,12 +76,26 @@
 		"country_code": "USA",
 		"state": "California"
 	},
+	"Los Angeles": {
+		"latitude": 34.052235,
+		"longitude": -118.243683,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
 	"Los Gatos": {
 		"latitude": 37.235808,
 		"longitude": -121.962375,
 		"country": "United States",
 		"country_code": "USA",
 		"state": "California"
+	},
+	"Margao": {
+		"latitude": 15.286691,
+		"longitude": 73.969780,
+		"country": "India",
+		"country_code": "IND",
+		"state": "Goa"
 	},
 	"McLean": {
 		"latitude": 38.938305,

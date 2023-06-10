@@ -13,7 +13,7 @@ const ContactNav = () => {
 				<ul>
 					<li><Link href="/contacts/priority">Priority</Link></li>
 					<li><Link href="/contacts/">Reminders</Link></li>
-					<li><Link href="/contacts/">Map</Link></li>
+					<li><Link href="/contacts/map">Map</Link></li>
 					<li><Link href="/contacts/">Graph</Link></li>
 				</ul>
 			</div>
