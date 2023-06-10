@@ -32,7 +32,6 @@ const OrgMap = ( props ) => {
 				{citiesData &&
 					<>
 						{Object.entries(props.data).map((city, id) => {
-							console.log(city[1].length)
 							return (
 								<CircleMarker
 									key={id}
@@ -41,6 +40,7 @@ const OrgMap = ( props ) => {
 									fillOpacity={0.7}
 									stroke={false}
 									pathOptions={{ color: 'var(--dark-primary-heading)' }}
+									eventHandlers={{ click: () => {props.handleCitySelect(city[0])}}}
 								>
 									<Tooltip direction="right" offset={[-8, -2]} opacity={1}>
 										<span>{city[0]}: {city[1].length} organizations</span>
