@@ -15,10 +15,17 @@
 	},
 	"Austin": {
 		"latitude": 30.267153,
-		"longitude": -97.743057,
+		"longitude": -94.208817,
 		"country": "United States",
 		"country_code": "USA",
 		"state": "Texas"
+	},
+	"Bentonville": {
+		"latitude": 36.372854,
+		"longitude": -94.208817,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "Arkansas"
 	},
 	"Bozeman": {
 		"latitude": 45.676998,
@@ -68,6 +75,13 @@
 		"country": "United States",
 		"country_code": "USA",
 		"state": "Illinois"
+	},
+	"Fremont": {
+		"latitude": 37.548271,
+		"longitude": -121.988571,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
 	},
 	"Irvine": {
 		"latitude": 33.669445,
@@ -146,8 +160,8 @@
 		"state": "New York"
 	},
 	"Redmond": {
-		"latitude": 44.272621,
-		"longitude": -121.173920,
+		"latitude": 47.673988,
+		"longitude": -122.121513,
 		"country": "United States",
 		"country_code": "USA",
 		"state": "Washington"
@@ -155,6 +169,13 @@
 	"Redwood City": {
 		"latitude": 37.487846,
 		"longitude": -122.236115,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
+	},
+	"San Diego": {
+		"latitude": 32.715736,
+		"longitude": -117.161087,
 		"country": "United States",
 		"country_code": "USA",
 		"state": "California"
@@ -198,18 +219,28 @@
 		"latitude": 59.334591,
 		"longitude": 18.063240,
 		"country": "Sweden",
+		"country_code": null,
 		"state": null
+	},
+	"Sunnyvale": {
+		"latitude": 37.368832,
+		"longitude": -122.036346,
+		"country": "United States",
+		"country_code": "USA",
+		"state": "California"
 	},
 	"Sydney": {
 		"latitude": -33.870453,
 		"longitude": 151.208755,
 		"country": "Australia",
+		"country_code": null,
 		"state": null
 	},
 	"Tel Aviv": {
 		"latitude": 32.166313,
 		"longitude":  34.843311,
 		"country": "Israel",
+		"country_code": null,
 		"state": null
 	}
 }

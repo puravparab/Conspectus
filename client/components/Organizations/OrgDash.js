@@ -121,7 +121,7 @@ const OrgDash = () => {
 									<div className={styles.orgDashBodyItemLeft}>
 										{org.image? 
 											<img width="25" height="25" src={org.image} alt={`${org.name} image`} />
-											:<img width="25" height="25" src="https://img.icons8.com/doodle/96/company--v1.png" alt="company--v1"/>
+											:<img width="25" height="25" src="https://storage.googleapis.com/simplify-imgs/company/default/logo.png" alt="company default"/>
 										}
 									</div>
 									<div className={styles.orgDashBodyItemContent}>
